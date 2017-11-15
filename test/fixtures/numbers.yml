@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numb: 1
+  board: one
+
+two:
+  numb: 1
+  board: two

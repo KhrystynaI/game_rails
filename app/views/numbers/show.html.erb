@@ -1,0 +1,9 @@
+<p>
+
+  <% if @board.raffle(@number.numb) == 5 %>
+  <%= render 'form_win' %>
+  <% else %>
+  <%= render 'form' %>
+  <% end %>
+
+  </p>

@@ -1,0 +1,34 @@
+<html>
+<titl><center><h1>Raffle</h1></center>
+</title>
+  <body>
+    <center>
+<p>Check your luck! You see six boxes, each of which contains a number.</p>
+<p>  Among them, is hidden the winning figure 5.</p>
+ <p>Try to guess what box it is and puts its number.</p>
+ <p>The boxes are numbered from 0 and up to 5, from left to right.</p>
+ <p>You can only enter those numbers.</p>
+   <p><h2>Good luck!!!</h2></p>
+   <table cellspacing="2" border="1" cellpadding="5" width="600" bgcolor="#ffcc00">
+     <td>0</td>
+     <td>1</td>
+     <td>2</td>
+     <td>3</td>
+     <td>4</td>
+     <td>5</td>
+   </table>
+<%= form_with model: @number, url: numbers_new_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :numb %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</center>
+</body>
+
+</html>
