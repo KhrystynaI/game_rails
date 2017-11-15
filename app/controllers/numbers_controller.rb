@@ -10,7 +10,7 @@ if @number.save
   #could be save! -- if we want to have exaption
 render 'show'
 else
-  render plain: "Sorry, please read ruls again"
+  render plain: "Sorry, please read rules again"
 end
 
 end
