@@ -1,13 +1,13 @@
 class Board < ApplicationRecord
   belongs_to :number
 
-attr_accessor :board
+  attr_accessor :board
 
   def initialize
     @board = load_random_values
-end
+  end
 
-def load_random_values
+  def load_random_values
     aboard = Array.new(6) { rand(1..10) }
 
     bboard = Array.new(6) { rand(1..10) }
@@ -16,13 +16,13 @@ def load_random_values
 
     board = cboard.slice!(0..5)
 
-      if board.include? nil
+    if board.include? nil
       board.compact!
       board.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).uniq!
       board.slice!(5..-1)
     end
 
-      ensure_winner_value_on(board)
+    ensure_winner_value_on(board)
 
 
   end
@@ -35,10 +35,11 @@ def load_random_values
 
       board.shuffle!
       return board
-end
-end
-def raffle(number)
-@board.at(number)
-end
+    end
+  end
+
+  def raffle(number)
+    @board.at(number)
+  end
 
 end
