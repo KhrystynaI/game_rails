@@ -1,7 +1,7 @@
 class NumbersController < ApplicationController
   def new
     @number = Number.new
-  endx
+  end
 
   def create
     @board  = Board.new
