@@ -2,11 +2,12 @@ class NumbersController < ApplicationController
   def new
     @number = Number.new
     @board  = Board.new
-    
+    session[:board] = @board
   end
 
   def create
-    @board  = Board.new
+    @board = Board.from(session[:board])
+
     @number = Number.new(number_param)
     if @number.save
       #could be save! -- if we want to have exaption

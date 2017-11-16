@@ -1,6 +1,4 @@
-class Board < ApplicationRecord
-  belongs_to :number
-
+class Board
   attr_accessor :board
 
   def initialize
@@ -23,8 +21,6 @@ class Board < ApplicationRecord
     end
 
     ensure_winner_value_on(board)
-
-
   end
 
   def ensure_winner_value_on(board)
@@ -40,6 +36,13 @@ class Board < ApplicationRecord
 
   def raffle(number)
     @board.at(number)
+  end
+
+  # Method deserializes the object from hash counterpart.
+  def self.from(hash)
+    board = Board.new
+    board.board = hash["board"]
+    board
   end
 
 end
