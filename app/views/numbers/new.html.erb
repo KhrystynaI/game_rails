@@ -1,5 +1,5 @@
 <html>
-<titl>
+<title>
   <center><h1>Raffle</h1></center>
   </title>
   <body>
@@ -11,13 +11,14 @@
     <p>You can only enter those numbers.</p>
     <p>
     <h2>Good luck!!!</h2></p>
+
     <table cellspacing="2" border="1" cellpadding="5" width="600" bgcolor="#ffcc00">
-      <td>0</td>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
+      <td>0 - (<%= @board.board[0] %>)</td>
+      <td>1- (<%= @board.board[1] %>)</td>
+      <td>2- (<%= @board.board[2] %>)</td>
+      <td>3- (<%= @board.board[3] %>)</td>
+      <td>4- (<%= @board.board[4] %>)</td>
+      <td>5- (<%= @board.board[5] %>)</td>
     </table>
     <%= form_with model: @number, url: numbers_new_path, local: true do |form| %>
 

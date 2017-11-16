@@ -1,6 +1,8 @@
 class NumbersController < ApplicationController
   def new
     @number = Number.new
+    @board  = Board.new
+    
   end
 
   def create
