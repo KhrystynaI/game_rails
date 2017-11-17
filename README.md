@@ -12,4 +12,10 @@ Also we use the "Numbers" controller, which contains an actions: “new”, “c
 The first and second actions represent and create the “numb” attribute and the instance of the board.
 The “show” action sends the user to the view where the method is called, which selects a number from the board array.
 
+git clone git@github.com:KhrystynaInzhuvatova/game_rails.git
+
 rails s - start the server and go to the main page 'localhost: 3000'
+
+rake db:migrate
+
+you can change board's size in 'config/application.yml'
