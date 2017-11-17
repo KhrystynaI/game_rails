@@ -1,0 +1,22 @@
+
+
+<table cellspacing="4" border="1" cellpadding="5" width="600" bgcolor="#ffcc00">
+<%
+i = 0
+num = Figaro.env.count_box_board
+count_box = num.to_i
+first_box = 0
+
+
+until first_box >= count_box  do %>
+
+  <td>
+    <%= i %>
+    <%= - (@board.board[i]) %>
+  </td>
+
+  <% i +=1 %>
+  <% first_box +=1%>
+
+<% end %>
+</table>

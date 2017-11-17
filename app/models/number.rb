@@ -3,6 +3,6 @@ class Number < ApplicationRecord
 
   validates :numb, presence: true,
             length:          {is: 1},
-            numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 5}
+            numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: ((Figaro.env.count_box_board).to_i)-1}
 
 end

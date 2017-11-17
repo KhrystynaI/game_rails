@@ -7,7 +7,6 @@ class NumbersController < ApplicationController
 
   def create
     @board = Board.from(session[:board])
-
     @number = Number.new(number_param)
     if @number.save
       #could be save! -- if we want to have exaption

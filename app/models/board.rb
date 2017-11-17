@@ -6,18 +6,21 @@ class Board
   end
 
   def load_random_values
-    aboard = Array.new(6) { rand(1..10) }
+    aboard = Array.new(100) { rand(1..150) }
 
-    bboard = Array.new(6) { rand(1..10) }
+    bboard = Array.new(100) { rand(1..150) }
 
     cboard = aboard | bboard
 
-    board = cboard.slice!(0..5)
+    num = Figaro.env.count_box_board
+    count_box_from_env = num.to_i
 
-    if board.include? nil
+    board = cboard.slice!(0...count_box_from_env)
+
+      if board.include? nil
       board.compact!
-      board.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).uniq!
-      board.slice!(5..-1)
+      board.push(1,2,3,4,5,6,7,8,9,10).uniq!
+      board.slice!(count_box_from_env..-1)
     end
 
     ensure_winner_value_on(board)
