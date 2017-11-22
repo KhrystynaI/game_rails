@@ -1,4 +1,28 @@
 <html>
+<head>
+  <script type="text/javascript">
+
+
+
+ function timer(){
+  var form = document.getElementById('form');
+  var obj=document.getElementById('timer_inp');
+  obj.innerHTML--;
+      if (obj.innerHTML==0){
+          alert('Time is over');
+           form.innerHTML = "time is over";
+          setTimeout(function(){},20000);
+          } else {
+          setTimeout(timer,1000);
+      }
+  }
+  setTimeout(timer,1000);
+
+
+
+</script>
+
+</head>
 <title>
   <center><h1>Raffle</h1></center>
   </title>
@@ -12,19 +36,16 @@
     <p>
     <h2>Good luck!!!</h2></p>
 
+    <div>Look out: <span id="timer_inp">20</span></div>
+
     <%= render 'table' %>
-    <%= form_with model: @number, url: numbers_new_path, local: true do |form| %>
 
-        <p>
-          <%= form.label :number %><br>
-          <%= form.text_field :numb %>
-        </p>
+    <div id = "form">
+      <%= render 'form_with_numb' %>
+      </div>
+          <%= link_to 'try again?' %>
 
-        <p>
-          <%= form.submit %>
-        </p>
-    <% end %>
-  </center>
-  </body>
+    </center>
+      </body>
 
 </html>

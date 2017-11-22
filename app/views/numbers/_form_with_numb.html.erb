@@ -1,0 +1,11 @@
+<%= form_with model: @number, url: numbers_new_path, local: true do |form| %>
+
+    <p>
+      <%= form.label :number %><br>
+      <%= form.text_field :numb %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+<% end %>
