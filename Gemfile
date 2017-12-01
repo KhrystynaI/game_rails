@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -34,6 +34,10 @@ gem 'dynamic_form'
 # gem 'capistrano-rails', group: :development
 
 gem "figaro"
+
+gem 'jquery-rails'
+
+gem 'devise', '~> 4.3'
 
 group :development, :test do
   gem 'pry-byebug'

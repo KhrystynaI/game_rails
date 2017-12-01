@@ -1,4 +1,5 @@
 class NumbersController < ApplicationController
+   before_action :authenticate_user!
   def new
     @number = Number.new
     @board  = Board.new
